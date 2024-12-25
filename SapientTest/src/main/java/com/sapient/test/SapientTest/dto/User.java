@@ -9,7 +9,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String maidenName;
-    private int age;
+    private Integer age;
     private String gender;
     private String email;
     private String phone;
@@ -18,8 +18,8 @@ public class User {
     private String birthDate;
     private String image;
     private String bloodGroup;
-    private double height;
-    private double weight;
+    private Double height;
+    private Double weight;
     private String eyeColor;
     private Hair hair;
     private String ip;
@@ -66,11 +66,11 @@ public class User {
         this.maidenName = maidenName;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -138,19 +138,19 @@ public class User {
         this.bloodGroup = bloodGroup;
     }
 
-    public double getHeight() {
+    public Double getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
+    public void setHeight(Double height) {
         this.height = height;
     }
 
-    public double getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(Double weight) {
         this.weight = weight;
     }
 
@@ -255,6 +255,40 @@ public class User {
     }
 
     public void setRole(String role) {
+        this.role = role;
+    }
+
+    public User() {
+    }
+
+    public User(Long id, String firstName, String lastName, String maidenName, Integer age, String gender, String email, String phone, String username, String password, String birthDate, String image, String bloodGroup, Double height, Double weight, String eyeColor, Hair hair, String ip, Address address, String macAddress, String university, Bank bank, Company company, String ein, String ssn, String userAgent, Crypto crypto, String role) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.maidenName = maidenName;
+        this.age = age;
+        this.gender = gender;
+        this.email = email;
+        this.phone = phone;
+        this.username = username;
+        this.password = password;
+        this.birthDate = birthDate;
+        this.image = image;
+        this.bloodGroup = bloodGroup;
+        this.height = height;
+        this.weight = weight;
+        this.eyeColor = eyeColor;
+        this.hair = hair;
+        this.ip = ip;
+        this.address = address;
+        this.macAddress = macAddress;
+        this.university = university;
+        this.bank = bank;
+        this.company = company;
+        this.ein = ein;
+        this.ssn = ssn;
+        this.userAgent = userAgent;
+        this.crypto = crypto;
         this.role = role;
     }
 }

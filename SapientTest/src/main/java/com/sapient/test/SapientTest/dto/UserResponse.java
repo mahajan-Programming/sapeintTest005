@@ -14,4 +14,11 @@ public class UserResponse {
     public void setUsers(List<User> users) {
         this.users = users;
     }
+
+    public UserResponse() {
+    }
+
+    public UserResponse(List<User> users) {
+        this.users = users;
+    }
 }
