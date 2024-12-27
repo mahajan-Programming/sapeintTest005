@@ -59,6 +59,10 @@ http://localhost:8889/swagger-ui/index.html#/
 
 ## Angular UI User Management System
 
+Angular UI URL
+```
+http://localhost:4200/dashboard
+```
 ![image](https://github.com/user-attachments/assets/333dc528-7009-4c3d-8d0f-e9521571d968)
 ![image](https://github.com/user-attachments/assets/31acd870-f5d2-4762-82b7-1624df890b72)
 
