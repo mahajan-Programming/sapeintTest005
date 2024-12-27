@@ -46,7 +46,8 @@ mvn clean install
 ```
 Running the Application
 Start the application:
-```mvn spring-boot:run
+```
+mvn spring-boot:run
 ```
 Access the application (if applicable):
 ```
