@@ -9,8 +9,7 @@ This project demonstrates the implementation of a `UserService` in Spring Boot, 
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
 - [Running the Application](#running-the-application)
-- [Contributing](#contributing)
-- [License](#license)
+- [UI](#Angular UI User Management System)
 
 ## Features
 - Fetches user data from a remote API (`https://dummyjson.com/users`).
