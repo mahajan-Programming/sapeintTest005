@@ -37,17 +37,21 @@ This project demonstrates the implementation of a `UserService` in Spring Boot, 
 
 
 Navigate to the project directory:
+```bash
 cd sapient-test-service
-
+```
 Build the project using Maven:
+```
 mvn clean install
-
+```
 Running the Application
 Start the application:
-mvn spring-boot:run
-
+```mvn spring-boot:run
+```
 Access the application (if applicable):
+```
 REST API: http://localhost:8080
+```
 
 
 
