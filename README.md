@@ -58,10 +58,12 @@ http://localhost:8889/swagger-ui/index.html#/
 ```
 
 ## Angular UI User Management System
-
+Navigate to UI/
+follow below commands
 ```
 npm install
-
+```
+```
 ng serve
 ```
 
