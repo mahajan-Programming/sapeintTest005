@@ -59,6 +59,12 @@ http://localhost:8889/swagger-ui/index.html#/
 
 ## Angular UI User Management System
 
+```
+npm install
+
+ng serve
+```
+
 Angular UI URL
 ```
 http://localhost:4200/dashboard
