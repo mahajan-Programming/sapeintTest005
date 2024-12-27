@@ -53,6 +53,7 @@ Access the application (if applicable):
 REST API: http://localhost:8080
 ```
 
+![image](https://github.com/user-attachments/assets/d3fe8849-446d-49aa-b8f0-768284b1c5b5)
 
 
 src/main/java
