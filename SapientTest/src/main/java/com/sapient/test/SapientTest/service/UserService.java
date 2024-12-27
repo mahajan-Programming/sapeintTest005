@@ -39,7 +39,7 @@ public class UserService {
         return null;
     }
 
-    private void saveDataToDb(UserResponse users) {
+    public void saveDataToDb(UserResponse users) {
         List<UserEntity> userToSave = new ArrayList<>();
         for(User user : users.getUsers()) {
             UserEntity userEntity = new UserEntity();
@@ -101,7 +101,7 @@ public class UserService {
         repository.saveAll(userToSave);
     }
 
-    private CompanyEntity mapCompanyDtoToEntity(Company company) {
+    public CompanyEntity mapCompanyDtoToEntity(Company company) {
         CompanyEntity companyEntity = new CompanyEntity();
         CompanyAddressEntity companyAddressEntity = new CompanyAddressEntity();
         companyEntity.setAddress(mapCompanyAddressDtoToEntity(company.getAddress()));
@@ -111,7 +111,7 @@ public class UserService {
         return companyEntity;
     }
 
-    private CompanyAddressEntity mapCompanyAddressDtoToEntity(Address address) {
+    public CompanyAddressEntity mapCompanyAddressDtoToEntity(Address address) {
         CompanyAddressEntity companyAddressEntity = new CompanyAddressEntity();
         companyAddressEntity.setCoordinates(mapCompanyCoordinatesDtoToEntity(address.getCoordinates()));
         companyAddressEntity.setAddress(address.getAddress());
@@ -123,14 +123,14 @@ public class UserService {
         return companyAddressEntity;
     }
 
-    private CompanyCoordinatesEntity mapCompanyCoordinatesDtoToEntity(Coordinates coordinates) {
+    public CompanyCoordinatesEntity mapCompanyCoordinatesDtoToEntity(Coordinates coordinates) {
         CompanyCoordinatesEntity companyCoordinatesEntity = new CompanyCoordinatesEntity();
         companyCoordinatesEntity.setLat(coordinates.getLat());
         companyCoordinatesEntity.setLng(coordinates.getLng());
         return  companyCoordinatesEntity;
     }
 
-    private BankEntity mapBankDtoToEntity(Bank bank) {
+    public BankEntity mapBankDtoToEntity(Bank bank) {
         BankEntity bankEntity = new BankEntity();
         bankEntity.setCardExpire(bank.getCardExpire());
         bankEntity.setCardNumber(bank.getCardNumber());
@@ -140,7 +140,7 @@ public class UserService {
         return bankEntity;
     }
 
-    private CryptoEntity mapCryptoDtoToEntity(Crypto crypto) {
+    public CryptoEntity mapCryptoDtoToEntity(Crypto crypto) {
         CryptoEntity cryptoEntity = new CryptoEntity();
         cryptoEntity.setCoin(crypto.getCoin());
         cryptoEntity.setNetwork(crypto.getNetwork());
@@ -148,7 +148,7 @@ public class UserService {
         return cryptoEntity;
     }
 
-    private AddressEntity mapAddressDTOToEntity(Address address) {
+    public AddressEntity mapAddressDTOToEntity(Address address) {
         AddressEntity addressEntity = new AddressEntity();
         CoordinatesEntity coordinatesEntity = new CoordinatesEntity();
         addressEntity.setAddress(address.getAddress());
@@ -161,14 +161,14 @@ public class UserService {
         return addressEntity;
     }
 
-    private CoordinatesEntity mapCoordinatesDtoToEntity(Coordinates coordinates) {
+    public CoordinatesEntity mapCoordinatesDtoToEntity(Coordinates coordinates) {
         CoordinatesEntity coordinatesEntity = new CoordinatesEntity();
         coordinatesEntity.setLat(coordinates.getLat());
         coordinatesEntity.setLng(coordinates.getLng());
         return coordinatesEntity;
     }
 
-    private HairEntity mapHairDTOtoEntity(Hair hair) {
+    public HairEntity mapHairDTOtoEntity(Hair hair) {
         HairEntity hairEntity = new HairEntity();
         hairEntity.setColor(hair.getColor());
         hairEntity.setType(hair.getType());
@@ -186,7 +186,7 @@ public class UserService {
         return null;
     }
 
-    private List<User> mapUserEntityToDTO(List<UserEntity> userList) {
+    public List<User> mapUserEntityToDTO(List<UserEntity> userList) {
         List<User> userListToReturn = new ArrayList<>();
         for(UserEntity userEntity : userList) {
             User user = new User();
@@ -245,7 +245,7 @@ public class UserService {
         return userListToReturn;
     }
 
-    private Company mapCompanyEntityToDTO(CompanyEntity company) {
+    public Company mapCompanyEntityToDTO(CompanyEntity company) {
         Company company1 = new Company();
         company1.setName(company.getName());
         company1.setTitle(company.getTitle());
@@ -254,7 +254,7 @@ public class UserService {
         return company1;
     }
 
-    private Address mapCompanyAddressEntityToDTO(CompanyAddressEntity address) {
+    public Address mapCompanyAddressEntityToDTO(CompanyAddressEntity address) {
         Address address1 = new Address();
         address1.setCoordinates(mapCompanyCoordinatesEntityToDTO(address.getCoordinates()));
         address1.setAddress(address.getAddress());
@@ -266,14 +266,14 @@ public class UserService {
         return address1;
     }
 
-    private Coordinates mapCompanyCoordinatesEntityToDTO(CompanyCoordinatesEntity coordinates) {
+    public Coordinates mapCompanyCoordinatesEntityToDTO(CompanyCoordinatesEntity coordinates) {
         Coordinates coordinates1 = new Coordinates();
         coordinates1.setLng(coordinates.getLng());
         coordinates1.setLat(coordinates.getLat());
         return coordinates1;
     }
 
-    private Bank mapBankEntityToDTO(BankEntity bank) {
+    public Bank mapBankEntityToDTO(BankEntity bank) {
         Bank bank1 = new Bank();
         bank1.setIban(bank.getIban());
         bank1.setCurrency(bank.getCurrency());
@@ -283,7 +283,7 @@ public class UserService {
         return bank1;
     }
 
-    private Crypto mapCryptoEntityToDTO(CryptoEntity crypto) {
+    public Crypto mapCryptoEntityToDTO(CryptoEntity crypto) {
         Crypto crypto1 = new Crypto();
         crypto1.setCoin(crypto.getCoin());
         crypto1.setNetwork(crypto.getNetwork());
@@ -291,7 +291,7 @@ public class UserService {
         return crypto1;
     }
 
-    private Address mapAddressEntityToDTO(AddressEntity address) {
+    public Address mapAddressEntityToDTO(AddressEntity address) {
         Address address1 = new Address();
         address1.setAddress(address.getAddress());
         address1.setState(address.getState());
@@ -303,14 +303,14 @@ public class UserService {
         return address1;
     }
 
-    private Coordinates mapCoordinatesEntityToDTO(CoordinatesEntity coordinates) {
+    public Coordinates mapCoordinatesEntityToDTO(CoordinatesEntity coordinates) {
         Coordinates coordinates1 = new Coordinates();
         coordinates1.setLat(coordinates.getLat());
         coordinates1.setLng(coordinates.getLng());
         return coordinates1;
     }
 
-    private Hair mapHairEntityToDTO(HairEntity hair) {
+    public Hair mapHairEntityToDTO(HairEntity hair) {
         Hair hair1 = new Hair();
         hair1.setColor(hair.getColor());
         hair1.setType(hair.getType());

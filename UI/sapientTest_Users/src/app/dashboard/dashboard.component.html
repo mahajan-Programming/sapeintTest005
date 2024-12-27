@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Design</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">User Management</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a routerLink="/dashboard" class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <!-- Long Button and Form -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <button (click)="loadUserData()" class="btn btn-success btn-lg w-100 mb-3">GET ALL USERS</button>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="inputField1" class="form-label text-primary">Filter users by Role</label>
+                        <div class="input-group">
+                            <input [(ngModel)]="usersByRole" id="inputField1" name="inputField1" type="text" class="form-control"  placeholder="Input Role">
+                            <button (click)="getUsersByRole()" class="btn btn-dark" type="button">Get Users</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="dropdownField" class="form-label text-success">Sort the User by Age</label>
+                        <div class="input-group">
+                            <select [(ngModel)]="sortedUsers" name="dropdownField" id="dropdownField" class="form-select">
+                                <option selected disabled>Select an Option</option>
+                                <option value="asc">Ascending</option>
+                                <option value="desc">Descending</option>
+                            </select>
+                            <button (click)="getSortedUsersByAge()" class="btn btn-dark" type="button">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="alert alert-light" role="alert" style="text-align: center;">
+           <strong> USER DETAILS : </strong> Below Table will provide you all the Details.
+          </div>
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th class="text-info">No.</th>
+                        <th class="text-info">Name</th>
+                        <th class="text-warning">Email</th>
+                        <th class="text-success">Phone</th>
+                        <th class="text-danger">Department</th>
+                        <th class="text-danger">Age</th>
+                        <th class="text-danger">Role</th>
+                        <th class="text-danger">User Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor ="let user of userData; let i = index;">
+                        <td>{{i+1}}</td>
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phone}}</td>
+                        <td>{{user.company.department}}</td>
+                        <td>{{user.role}}</td>
+                        <td>{{user.age}}</td>
+                        <td><button (click)='getUsersBySSN(user.ssn)' class="btn btn-info" type="button">User Details</button></td>
+                    </tr>
+
+                    
+                </tbody>
+            </table>
+        </div> 
+
+
+
+
+
+    </div>
+ <!-- Footer -->
+ <footer class="bg-light text-center text-lg-start">
+    <div class="container p-4">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2024 User Management. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

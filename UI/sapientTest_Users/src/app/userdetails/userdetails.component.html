@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">User Management</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a routerLink="/dashboard" class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-3">
+        <h1 class="text-center mb-4">User Profile</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{user.image}}" class="card-img-top" alt="User Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+                        <p class="card-text"><strong>Role:</strong> {{user.role}}</p>
+                        <p class="card-text"><strong>Username:</strong> {{user.username}}</p>
+                        <p class="card-text"><strong>Email:</strong> {{user.email}}</p>
+                        <p class="card-text"><strong>Phone:</strong> {{user.phone}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header">Personal Information</div>
+                    <div class="card-body">
+                        <p><strong>Age:</strong> {{user.age}}</p>
+                        <p><strong>Gender:</strong> {{user.gender}}</p>
+                        <p><strong>Birth Date:</strong> {{user.birthDate}}</p>
+                        <p><strong>Blood Group:</strong> {{user.bloodGroup}}</p>
+                        <p><strong>Eye Color:</strong> {{user.eyeColor}}</p>
+                        <p><strong>Hair:</strong> {{user.hair.type}} {{user.hair.color}}</p>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">Address</div>
+                    <div class="card-body">
+                        <p><strong>Address:</strong> {{user.address.address}}</p>
+                        <p><strong>City:</strong> {{user.address.city}}</p>
+                        <p><strong>State:</strong> {{user.address.state}}</p>
+                        <p><strong>Postal Code:</strong> {{user.address.postalCode}}</p>
+                        <p><strong>Country:</strong> {{user.address.country}}</p>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">Company Information</div>
+                    <div class="card-body">
+                        <p><strong>Company:</strong> {{user.company.name}}</p>
+                        <p><strong>Department:</strong> {{user.company.department}}</p>
+                        <p><strong>Title:</strong> {{user.company.title}}</p>
+                        <p><strong>Address:</strong> {{user.company.address.address}}  {{user.company.address.city}} {{user.company.address.state}} {{user.company.address.country}} {{user.company.address.postalCode}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">Bank Information</div>
+                    <div class="card-body">
+                        <p><strong>Card Type:</strong> {{user.bank.cardType}}</p>
+                        <p><strong>Card Number:</strong> {{user.bank.cardNumber}}</p>
+                        <p><strong>Card Expiry:</strong> {{user.bank.cardExpire}}</p>
+                        <p><strong>Currency:</strong> {{user.bank.currency}}</p>
+                        <p><strong>IBAN:</strong> {{user.bank.iban}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">Crypto Information</div>
+                    <div class="card-body">
+                        <p><strong>Coin:</strong> {{user.crypto.coin}}</p>
+                        <p><strong>Wallet:</strong> {{user.crypto.wallet}}</p>
+                        <p><strong>Network:</strong> {{user.crypto.network}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Additional Information</div>
+            <div class="card-body">
+                <p><strong>Height:</strong> {{user.height}}</p>
+                <p><strong>Weight:</strong> {{user.weight}}</p>
+                <p><strong>IP Address:</strong> {{user.ip}}</p>
+                <p><strong>MAC Address:</strong>{{user.macAddress}}</p>
+                <p><strong>University:</strong> {{user.university}}</p>
+                <p><strong>EIN:</strong> {{user.ein}}</p>
+                <p><strong>SSN:</strong>{{user.ssn}}</p>
+                <p><strong>User Agent:</strong> {{user.userAgent}}</p>
+            </div>
+        </div>
+    </div>
+ <!-- Footer -->
+ <footer class="bg-light text-center text-lg-start">
+    <div class="container p-4">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2024 User Management. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
