@@ -71,7 +71,7 @@ Angular UI URL
 ```
 http://localhost:4200/dashboard
 ```
-![image](https://github.com/user-attachments/assets/333dc528-7009-4c3d-8d0f-e9521571d968)
+![image](https://github.com/user-attachments/assets/2cd1321b-21d8-4b25-9f4e-355317bb6427)
 ![image](https://github.com/user-attachments/assets/31acd870-f5d2-4762-82b7-1624df890b72)
 
 ![image](https://github.com/user-attachments/assets/382788f5-c7b8-465b-b0e4-199177003f23)
