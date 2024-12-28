@@ -59,8 +59,19 @@
             </div>
         </div>
         <div class="alert alert-light" role="alert" style="text-align: center;">
-           <strong> USER DETAILS : </strong> Below Table will provide you all the Details.
+           <strong> USER DETAILS : </strong> Below Table will provide you all the Details.<br>
+           <div *ngIf="totalUsers"><u> <mark> Total Number of Users Found </mark></u> <strong> <mark>{{totalUsers}}</mark></strong></div>
+           <div *ngIf="usersByRole"><mark> Role as</mark> <strong> <u> <mark>{{usersByRole | uppercase}}</mark></u></strong>.</div>
+           <div style="text-align: center;" *ngIf="isLoader">
+            <br><br>
+
+            <div class="spinner-border" role="status" >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+          </div>    
           </div>
+          
+          
         <!-- Table -->
         <div class="table-responsive">
             <table class="table table-bordered table-hover">

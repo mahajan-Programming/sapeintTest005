@@ -23,7 +23,8 @@ export class DashboardComponent implements  OnInit{
   usersBySSN!: UserDTO;
   sortedUsers: string="";
   public ssn!:string;
-
+  isLoader!:boolean;
+  totalUsers!:number;
 
   rowData = [
     { make: "Tesla", model: "Model Y", price: 64950, electric: true },
@@ -52,17 +53,23 @@ colDefs: ColDef[] = [
    * Load user data
    */
   loadUserData(): void {
+    this.isLoader=true;
+    
     this.userService.loadUserData().subscribe(
       (data: ResponseDTO) => {
           this.response = data;
           this.userData =this.response.users;
-        
+          this.totalUsers = this.userData.length;
+          this.usersByRole = "";
+          this.sortedUsers="";
         console.log('User Data:', this.userData);
       },
       (error) => {
         console.error('Error loading user data:', error);
       }
     );
+    this.isLoader=false;
+
   }
   /**
    * Check health status
@@ -88,6 +95,8 @@ colDefs: ColDef[] = [
       (data: ResponseDTO) => {
         this.response = data;
           this.userData =this.response.users;
+          this.totalUsers = this.userData.length;
+          this.sortedUsers="";
         console.log(`Users with role ${this.usersByRole}:`, this.userData);
       },
       (error) => {
@@ -106,6 +115,7 @@ colDefs: ColDef[] = [
         this.ssn=ssn;
         this.response = data;
           this.userData =this.response.users;
+          this.totalUsers = this.userData.length;
           this.router.navigateByUrl("/userdetails/"+ssn);
         console.log(`Users with SSN ${ssn}:`, this.usersBySSN);
       },
@@ -124,6 +134,8 @@ colDefs: ColDef[] = [
       (data: ResponseDTO) => {
         this.response = data;
         this.userData =this.response.users;
+        this.totalUsers = this.userData.length;
+        this.usersByRole = "";
         console.log(`Users sorted by age (${this.sortedUsers}):`, this.userData);
       },
       (error) => {
